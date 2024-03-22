@@ -1,9 +1,4 @@
-import {
-  Authenticated,
-  GitHubBanner,
-  Refine,
-  WelcomePage,
-} from "@refinedev/core";
+import { Authenticated, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
@@ -30,7 +25,6 @@ const API_URL = `{ API_BASE_URL } / graphql`;
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <AntdApp>
           <DevtoolsProvider>
@@ -48,8 +42,6 @@ function App() {
               }}
             >
               <Routes>
-                <Route index element={<WelcomePage />} />
-                <Route index element={<Home />} />
                 <Route
                   path="forgot-password"
                   index
@@ -68,7 +60,9 @@ function App() {
                       </Layout>
                     </Authenticated>
                   }
-                ></Route>
+                >
+                  <Route index element={<Home />} />
+                </Route>
               </Routes>
               <RefineKbar />
               <UnsavedChangesNotifier />
