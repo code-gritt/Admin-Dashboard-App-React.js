@@ -11,8 +11,10 @@ import routerBindings, {
 import { App as AntdApp } from "antd";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
+import { ForgotPassword, Home, Login, Register } from "./pages";
 
-// const API_URL = "https://api.nestjs-query.refine.dev/graphql";
+const API_BASE_URL = "https://api.crm.refine.dev";
+const API_URL = `{ API_BASE_URL } / graphql`;
 // const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
 
 // const gqlClient = new GraphQLClient(API_URL);
@@ -40,6 +42,14 @@ function App() {
             >
               <Routes>
                 <Route index element={<WelcomePage />} />
+                <Route index element={<Home />} />
+                <Route
+                  path="forgot-password"
+                  index
+                  element={<ForgotPassword />}
+                />
+                <Route path="login" index element={<Login />} />
+                <Route path="register" index element={<Register />} />
               </Routes>
               <RefineKbar />
               <UnsavedChangesNotifier />
