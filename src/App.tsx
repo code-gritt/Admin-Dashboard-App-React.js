@@ -14,6 +14,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
 import { ForgotPassword, Home, Login, Register } from "./pages";
 import { Layout } from "./components/layout";
+import { resources } from "./config/resources";
 
 const API_BASE_URL = "https://api.crm.refine.dev";
 const API_URL = `{ API_BASE_URL } / graphql`;
@@ -32,6 +33,7 @@ function App() {
               dataProvider={dataProvider}
               liveProvider={liveProvider}
               authProvider={authProvider}
+              resources={resources}
               notificationProvider={useNotificationProvider}
               routerProvider={routerBindings}
               options={{
