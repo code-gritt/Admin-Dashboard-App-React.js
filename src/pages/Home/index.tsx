@@ -1,4 +1,4 @@
-import UpcomingEvents from "../../components/home/upcoming-events";
+import { UpcomingEvents } from "../../components/home/upcoming-events";
 import DealsChart from "../../components/home/deals-chart";
 import { Col, Row } from "antd";
 
