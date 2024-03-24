@@ -7,8 +7,8 @@ import dayjs from "dayjs";
 
 import { DashboardCalendarUpcomingEventsQuery } from "@/graphql/types";
 
+import { Text } from "../../text";
 import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from "./queries";
-import { Text } from "../text";
 
 export const UpcomingEvents = () => {
   const { data, isLoading } = useList<

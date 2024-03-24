@@ -1,5 +1,5 @@
-import { UpcomingEvents } from "../../components/home/upcoming-events";
-import DealsChart from "../../components/home/deals-chart";
+import { UpcomingEvents } from "../../components/home/upcoming-events/upcoming-events";
+import {DealsChart} from "../../components/home/deals-chart/deals-chart";
 import { Col, Row } from "antd";
 
 export const Home = () => {
