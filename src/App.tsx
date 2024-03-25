@@ -14,6 +14,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
 import {
   CompanyCreatePage,
+  CompanyEditPage,
   ForgotPassword,
   Home,
   Login,
@@ -22,6 +23,7 @@ import {
 import { Layout } from "./components/layout";
 import { resources } from "./config/resources";
 import { CompanyListPage } from "./pages/companies/list";
+import { TasksCreatePage, TasksEditPage, TasksListPage } from "./pages/tasks";
 
 const API_BASE_URL = "https://api.crm.refine.dev";
 const API_URL = `{ API_BASE_URL } / graphql`;
@@ -74,6 +76,18 @@ function App() {
                   <Route path="/companies">
                     <Route index element={<CompanyListPage />} />
                     <Route path="new" element={<CompanyCreatePage />} />
+                    <Route path="edit/:id" element={<CompanyEditPage />} />
+                  </Route>
+                  <Route
+                    path="/tasks"
+                    element={
+                      <TasksListPage>
+                        <Outlet />
+                      </TasksListPage>
+                    }
+                  >
+                    <Route path="new" element={<TasksCreatePage />} />
+                    <Route path="edit/:id" element={<TasksEditPage />} />
                   </Route>
                 </Route>
               </Routes>
