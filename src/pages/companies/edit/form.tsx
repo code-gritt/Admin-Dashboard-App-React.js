@@ -7,18 +7,19 @@ import {
 } from "@refinedev/nestjs-query";
 
 import { Form, Input, InputNumber, Select } from "antd";
+import { SelectOptionWithAvatar } from "../../../components/select-option-with-avatar/index";
+import { CustomAvatar } from "../../../components/custom-avatar/index";
 
-import { CustomAvatar, SelectOptionWithAvatar } from "@/components";
-import { USERS_SELECT_QUERY } from "@/graphql/queries";
 import { BusinessType, CompanySize, Industry } from "@/graphql/schema.types";
 import {
   UpdateCompanyMutation,
   UpdateCompanyMutationVariables,
   UsersSelectQuery,
 } from "@/graphql/types";
-import { getNameInitials } from "@/utilities";
+import { getNameInitials } from "../../../utilities/get-name-initials";
 
 import { UPDATE_COMPANY_MUTATION } from "./queries";
+import { USERS_SELECT_QUERY } from "../../../graphql/queries";
 
 export const CompanyForm = () => {
   const { saveButtonProps, formProps, formLoading, queryResult } = useForm<

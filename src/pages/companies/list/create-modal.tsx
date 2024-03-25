@@ -8,8 +8,8 @@ import {
 
 import { Form, Input, Modal, Select } from "antd";
 
-import { SelectOptionWithAvatar } from "@/components";
-import { USERS_SELECT_QUERY } from "@/graphql/queries";
+import { SelectOptionWithAvatar } from "../../../components/select-option-with-avatar/index";
+
 import {
   CreateCompanyMutation,
   CreateCompanyMutationVariables,
@@ -17,6 +17,7 @@ import {
 } from "@/graphql/types";
 
 import { CREATE_COMPANY_MUTATION } from "./queries";
+import { USERS_SELECT_QUERY } from "../../../graphql/queries";
 
 export const CompanyCreateModal = () => {
   const go = useGo();

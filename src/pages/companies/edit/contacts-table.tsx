@@ -10,8 +10,9 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Input, Select, Space, Table } from "antd";
-
-import { ContactStatusTag, CustomAvatar, Text } from "@/components";
+import { ContactStatusTag } from "../../../components/tags/contact-status-tag";
+import { Text } from "../../../components/text/index";
+import { CustomAvatar } from "../../../components/custom-avatar/index";
 import { Contact } from "@/graphql/schema.types";
 import { CompanyContactsTableQuery } from "@/graphql/types";
 
@@ -61,7 +62,7 @@ export const CompanyContactsTable = () => {
       meta: {
         gqlQuery: COMPANY_CONTACTS_TABLE_QUERY,
       },
-    },
+    }
   );
 
   return (
