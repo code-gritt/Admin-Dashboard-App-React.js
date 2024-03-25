@@ -15,6 +15,7 @@ import { authProvider, dataProvider, liveProvider } from "./providers";
 import { ForgotPassword, Home, Login, Register } from "./pages";
 import { Layout } from "./components/layout";
 import { resources } from "./config/resources";
+import { CompanyListPage } from "./pages/companies/list";
 
 const API_BASE_URL = "https://api.crm.refine.dev";
 const API_URL = `{ API_BASE_URL } / graphql`;
@@ -64,6 +65,7 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
+                  <Route path="companies" index element={<CompanyListPage />} />
                 </Route>
               </Routes>
               <RefineKbar />
